@@ -44,21 +44,23 @@ Then in Claude Code: drop a file into `raw/docs/` and ask a question. After a de
 - `schema/capture-workflow.md` — the four capture triggers and the "do not record" list (noise is the #1 failure mode)
 - `/wiki-capture`, `/wiki-query` — two slash commands (as a plugin: `/llm-wiki:init`, `/llm-wiki:capture`, `/llm-wiki:query`)
 
-## Pro
+## Starter and Pro
 
-The Pro kit ($19, one-time, includes 1.x updates) adds what makes the wiki hold up over months:
+The paid kits add what makes the wiki hold up over months:
 
-| | Free | Pro |
-|---|---|---|
-| Commands | capture, query | + ingest, lint, status, handover |
-| Schema files | 2 | 6 (ingest, query, lint, glossary-pointers) |
-| `raw/` protection hook | | ✓ blocks the agent from editing raw |
-| Unpushed-changes Stop hook | | ✓ never lose a session's work |
-| `scripts/lint.py` | | ✓ frontmatter, orphans, broken links, stale pages; CI exit code |
-| Examples | | ✓ decision-capture (wiki beside an app), investment, diary, revenue-experiments |
-| Guide | | ✓ setup, customization, sibling-repo pattern, troubleshooting |
+| | Free | Starter ($19) | Pro ($49) |
+|---|---|---|---|
+| Commands | capture, query | + ingest, lint, status, handover | same |
+| Schema files | 2 | 6 (ingest, query, lint, glossary-pointers) | same |
+| `raw/` protection hook | | ✓ blocks edits and overwrites, allows new files and appends | ✓ |
+| Unpushed-changes Stop hook | | ✓ never lose a session's work | ✓ |
+| `scripts/lint.py` | | ✓ frontmatter, orphans, broken links, stale pages; CI exit code | ✓ |
+| Examples | | ✓ decision-capture, investment, diary, revenue-experiments | ✓ |
+| Guide | | ✓ setup, customization, sibling-repo pattern, troubleshooting | ✓ |
+| **Finished, verified wikis** | | | ✓ codebase-decisions, research-notes, team-runbook, each with a `VERIFIED.md` transcript (lint 0, real ingest/query/capture runs) |
+| Updates | | 1.x line | 12 months, including the finished wikis |
 
-**→ [Get Pro ($19, one-time)](https://buy.polar.sh/polar_cl_6VoQbr5434gNyp4AQx8dKFazrJsMwdm92EtVT1BVTa3)**
+**→ [Get Starter ($19)](https://buy.polar.sh/polar_cl_6VoQbr5434gNyp4AQx8dKFazrJsMwdm92EtVT1BVTa3)** · **→ [Get Pro ($49)](https://buy.polar.sh/polar_cl_kRvZ7bzOE2EGSzefIcOJRKqVxfohNfm8kIJvJ4AkfA0)**
 
 ## Why this shape
 
