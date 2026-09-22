@@ -46,7 +46,7 @@ The Pro kit ($19, one-time, includes 1.x updates) adds what makes the wiki hold 
 | Examples | | ✓ decision-capture (wiki beside an app), investment, diary, revenue-experiments |
 | Guide | | ✓ setup, customization, sibling-repo pattern, troubleshooting |
 
-**→ Pro launches in October 2026. Star or watch this repo to be notified.** <!-- POLAR_CHECKOUT_URL -->
+**→ [Get Pro ($19, one-time)](https://buy.polar.sh/polar_cl_6VoQbr5434gNyp4AQx8dKFazrJsMwdm92EtVT1BVTa3)**
 
 ## Why this shape
 
