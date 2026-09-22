@@ -1,0 +1,12 @@
+{
+  "name": "llm-wiki",
+  "version": "1.0.0",
+  "displayName": "LLM Wiki",
+  "description": "Persistent, self-maintained knowledge wiki for Claude Code: immutable raw/, agent-owned wiki/, explicit capture rules. Free edition of the LLM Wiki Kit by Vellum Labs.",
+  "author": { "name": "Vellum Labs", "url": "https://github.com/vellumlabs" },
+  "homepage": "https://github.com/vellumlabs/llm-wiki-kit",
+  "repository": "https://github.com/vellumlabs/llm-wiki-kit",
+  "license": "MIT",
+  "keywords": ["wiki", "knowledge-base", "memory", "karpathy", "documentation"],
+  "commands": "./commands"
+}
