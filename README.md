@@ -2,6 +2,8 @@
 
 *by [Vellum Labs](https://github.com/vellumlabs)*
 
+**Claude Code forgets your project's decisions between sessions; this kit makes it keep a cited, self-maintained markdown wiki in your repo instead — one command to set up, no database.**
+
 Give Claude Code a **persistent, self-maintained knowledge wiki** — the setup Andrej Karpathy sketched in his [LLM wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f), turned into a drop-in repository template.
 
 Instead of re-reading your documents every session, the agent builds a wiki once, answers from it, and writes new knowledge back. Facts stay in an immutable `raw/`; the agent owns `wiki/`; `CLAUDE.md` + `schema/` tell it exactly how to behave.
@@ -25,7 +27,25 @@ Extracted from wikis running beside a production app, an investment journal, a d
 /llm-wiki:init a wiki that captures the decisions behind this app
 ```
 
-`/llm-wiki:init` scaffolds `CLAUDE.md`, `schema/`, `wiki/` and `raw/` into the current repository and fills the placeholders. Then use `/llm-wiki:capture` after a decision and `/llm-wiki:query <question>` to answer from the wiki.
+`/llm-wiki:init` scaffolds `CLAUDE.md`, `WIKI.md`, `schema/`, `wiki/` and `raw/` into the current repository and fills the placeholders. It leaves your `README.md` alone and merges into an existing `.gitignore` instead of replacing it. Then use `/llm-wiki:capture` after a decision and `/llm-wiki:query <question>` to answer from the wiki.
+
+What you should see (verified 2026-09-23 on Claude Code 2.1.280, in a fresh repo that already had its own `README.md` and `.gitignore`):
+
+```
+> /llm-wiki:init a wiki that captures the decisions behind this invoicing app
+  .gitignore     merged (your lines kept)
+  CLAUDE.md      placeholders filled: project name, purpose, categories decisions/ + billing-rules/
+  WIKI.md        short how-to for humans
+  README.md      yours, untouched
+  raw/  schema/  wiki/index.md  wiki/log.md
+
+> We decided invoice numbers are per-tenant sequential with no gaps; we rejected UUIDs. /llm-wiki:capture
+  wiki/decisions/invoice-numbering.md   dated entry, alternatives rejected, open questions
+  wiki/log.md                           + [capture] line
+
+> /llm-wiki:query why don't we use UUIDs for invoice numbers?
+  answer from wiki/decisions/invoice-numbering.md, cited as conversation-derived; + [query] line in wiki/log.md
+```
 
 **As a template**:
 

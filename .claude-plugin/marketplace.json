@@ -1,14 +1,14 @@
 {
   "name": "vellumlabs",
   "description": "Plugins by Vellum Labs: persistent, self-maintained knowledge wikis for Claude Code.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "owner": { "name": "Vellum Labs", "url": "https://github.com/vellumlabs" },
   "plugins": [
     {
       "name": "llm-wiki",
       "source": "./plugin",
       "description": "Give Claude Code a persistent, self-maintained knowledge wiki (Karpathy's LLM-wiki idea): /llm-wiki:init scaffolds the template, /llm-wiki:capture records decisions, /llm-wiki:query answers from the wiki.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": { "name": "Vellum Labs", "url": "https://github.com/vellumlabs" },
       "homepage": "https://github.com/vellumlabs/llm-wiki-kit",
       "repository": "https://github.com/vellumlabs/llm-wiki-kit",

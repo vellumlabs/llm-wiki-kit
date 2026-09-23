@@ -72,7 +72,7 @@ wiki/
 └── ...              # Add categories only when a real need appears. No empty stubs.
 ```
 
-Pick categories by asking: *why* → decisions, *what does the word mean* → concepts, *summary of a raw source* → sources. See `schema/glossary-pointers.md` when unsure.
+Pick categories by asking: *why* → decisions, *what does the word mean* → concepts, *summary of a raw source* → sources. When a page could live in two places, pick the one a reader would open first and link from the other.
 
 ---
 
@@ -83,7 +83,7 @@ Pick categories by asking: *why* → decisions, *what does the word mean* → co
 | **Capture** | Record a decision / fact / result the moment it is confirmed | `schema/capture-workflow.md` | `/wiki-capture` |
 | **Query** | Answer from the wiki first; fall back to raw; write back | (inline in the command) | `/wiki-query` |
 
-Ingest, Lint (with a script), Status and Handover commands, the raw-protection and unpushed-changes hooks, and four filled-in specializations are in the Pro kit: https://github.com/vellumlabs/llm-wiki-kit#pro
+Ingest, Lint (with a script), Status and Handover commands, the raw-protection and unpushed-changes hooks, and four worked examples are in the Starter kit; Pro adds three finished, verified wikis: https://github.com/vellumlabs/llm-wiki-kit#starter-and-pro
 
 ---
 
