@@ -27,9 +27,9 @@ Extracted from wikis running beside a production app, an investment journal, a d
 /llm-wiki:init a wiki that captures the decisions behind this app
 ```
 
-`/llm-wiki:init` scaffolds `CLAUDE.md`, `WIKI.md`, `schema/`, `wiki/` and `raw/` into the current repository and fills the placeholders. It leaves your `README.md` alone and merges into an existing `.gitignore` instead of replacing it. Then use `/llm-wiki:capture` after a decision and `/llm-wiki:query <question>` to answer from the wiki.
+`/llm-wiki:init` scaffolds `CLAUDE.md`, `WIKI.md`, `schema/`, `wiki/` and `raw/` into the current repository and fills the placeholders. It leaves your `README.md` alone, merges into an existing `.gitignore` instead of replacing it, and commits the scaffold as one commit that touches only its own files (your other uncommitted work stays uncommitted). Then use `/llm-wiki:capture` after a decision and `/llm-wiki:query <question>` to answer from the wiki.
 
-What you should see (verified 2026-09-23 on Claude Code 2.1.280, in a fresh repo that already had its own `README.md` and `.gitignore`):
+What you should see (verified 2026-09-23 on Claude Code 2.1.280 in a fresh repo that already had its own `README.md` and `.gitignore`; commit behaviour re-verified 2026-09-24 on 2.1.281 with uncommitted work present):
 
 ```
 > /llm-wiki:init a wiki that captures the decisions behind this invoicing app
@@ -38,10 +38,12 @@ What you should see (verified 2026-09-23 on Claude Code 2.1.280, in a fresh repo
   WIKI.md        short how-to for humans
   README.md      yours, untouched
   raw/  schema/  wiki/index.md  wiki/log.md
+  committed 8559093 "Add LLM wiki scaffold" (10 files; app.py edits and notes.txt left alone, not pushed)
 
 > We decided invoice numbers are per-tenant sequential with no gaps; we rejected UUIDs. /llm-wiki:capture
   wiki/decisions/invoice-numbering.md   dated entry, alternatives rejected, open questions
   wiki/log.md                           + [capture] line
+  committed "wiki: record decision ..." (wiki files only); pushed only if the branch has an upstream
 
 > /llm-wiki:query why don't we use UUIDs for invoice numbers?
   answer from wiki/decisions/invoice-numbering.md, cited as conversation-derived; + [query] line in wiki/log.md

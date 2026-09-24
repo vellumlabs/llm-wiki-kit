@@ -7,4 +7,4 @@ Record a confirmed decision, rule, or result into the wiki. Argument: a one-line
 2. Route per section 2. Prefer appending to an existing domain page (newest entry first) over creating a page.
 3. Write the entry with a citation. If the source is this conversation, decide volatile vs. pin (section 3).
 4. Update `wiki/index.md`; append to `wiki/log.md`.
-5. Commit and push. Report what was recorded and where, in two lines.
+5. Commit only the wiki files you touched (`git add wiki/ raw/` paths you wrote, not `-A`) with a message like `wiki: <what was recorded>`. Push if the branch has an upstream; otherwise leave it committed. Report what was recorded and where, in two lines.
