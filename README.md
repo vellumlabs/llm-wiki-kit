@@ -79,7 +79,7 @@ The paid kits add what makes the wiki hold up over months:
 | `scripts/lint.py` | | ✓ frontmatter, orphans, broken links, stale pages; CI exit code | ✓ |
 | Examples | | ✓ decision-capture, investment, diary, revenue-experiments | ✓ |
 | Guide | | ✓ setup, customization, sibling-repo pattern, troubleshooting | ✓ |
-| **Finished, verified wikis** | | | ✓ codebase-decisions, research-notes, team-runbook, each with a `VERIFIED.md` transcript (lint 0, real ingest/query/capture runs) |
+| **Finished, verified wikis** | | | ✓ codebase-decisions, research-notes, team-runbook, life-log (a personal diary: a year of entries, receipts, money and people pages), each with a `VERIFIED.md` transcript (lint 0, real ingest/query/capture runs) |
 | Updates | | 1.x line | 12 months, including the finished wikis |
 
 **→ [Get Starter ($19)](https://buy.polar.sh/polar_cl_6VoQbr5434gNyp4AQx8dKFazrJsMwdm92EtVT1BVTa3)** · **→ [Get Pro ($49)](https://buy.polar.sh/polar_cl_kRvZ7bzOE2EGSzefIcOJRKqVxfohNfm8kIJvJ4AkfA0)**
