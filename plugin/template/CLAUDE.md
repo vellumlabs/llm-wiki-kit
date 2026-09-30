@@ -83,7 +83,7 @@ Pick categories by asking: *why* → decisions, *what does the word mean* → co
 | **Capture** | Record a decision / fact / result the moment it is confirmed | `schema/capture-workflow.md` | `/llm-wiki:capture` |
 | **Query** | Answer from the wiki first; fall back to raw; write back | (inline in the command) | `/llm-wiki:query` |
 
-Ingest, Lint (with a script), Status and Handover commands, the raw-protection and unpushed-changes hooks, and four worked examples are in the Starter kit; Pro adds three finished, verified wikis: https://github.com/vellumlabs/llm-wiki-kit#starter-and-pro
+Ingest, Lint (with a script), Status and Handover commands, the raw-protection and unpushed-changes hooks, and four worked examples are in the Starter kit; Pro adds four finished, verified wikis: https://github.com/vellumlabs/llm-wiki-kit#starter-and-pro
 
 ---
 
@@ -101,7 +101,7 @@ Ingest, Lint (with a script), Status and Handover commands, the raw-protection a
 - Frontmatter on every wiki page (`type`, `title`, `status`, `updated` are required)
 - A citation for every claim
 - Update `wiki/index.md` and append to `wiki/log.md` after any create/update
-- Commit and push the wiki when you are done
+- Commit the wiki when you are done; push only to a remote you can write to (a rejected push sets `git config llmwiki.push false`, after which commands stop trying)
 
 Details: `schema/wiki-conventions.md`.
 

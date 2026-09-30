@@ -49,6 +49,11 @@ What you should see (verified 2026-09-23 on Claude Code 2.1.280 in a fresh repo 
   answer from wiki/decisions/invoice-numbering.md, cited as conversation-derived; + [query] line in wiki/log.md
 ```
 
+Two things learned from running the kit against a codebase that is not ours (verified 2026-09-30 on 2.1.285):
+
+- **Push only goes to remotes you can write to.** If the repository is a plain clone of someone else's project (not your fork), the first push after a capture is rejected; the commands then set `git config llmwiki.push false` and stop trying, and every wiki change stays as local commits. Unset it (`git config --unset llmwiki.push`) once you point `origin` at your own fork.
+- **Build from a full clone.** With `git clone --depth 1` there is no history, so the agent cannot cite *when* something was introduced (`git log -S`) and has to mark those claims as unsourced. Use a full clone (or `git fetch --unshallow`) when you want dated citations.
+
 **As a template**:
 
 ```bash

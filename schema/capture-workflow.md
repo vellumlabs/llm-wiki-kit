@@ -40,4 +40,4 @@ Cite as `raw/code/<repo>/<path>:<lines> @<short-commit>` so the reference is pin
 
 1. Update `wiki/index.md` (new page or changed summary).
 2. Append one line to `wiki/log.md`: `- YYYY-MM-DD [capture] <page>: <one-line summary>`.
-3. Commit and push.
+3. Commit the wiki files you touched. Push once if the branch has an upstream and `git config --get llmwiki.push` is not `false`; if the push is rejected, set `llmwiki.push` to `false` and stop pushing (the commit stays local).
