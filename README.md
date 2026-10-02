@@ -6,7 +6,7 @@
 
 Give Claude Code a **persistent, self-maintained knowledge wiki** — the setup Andrej Karpathy sketched in his [LLM wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f), turned into a drop-in repository template.
 
-Instead of re-reading your documents every session, the agent builds a wiki once, answers from it, and writes new knowledge back. Facts stay in an immutable `raw/`; the agent owns `wiki/`; `CLAUDE.md` + `schema/` tell it exactly how to behave.
+The agent builds the wiki from your sources, answers from it with citations, and records the decisions you make in conversation, so the next session knows *why* invoice numbers are sequential and not just *that* they are. That last part is what no retrieval system can give you: it is knowledge that exists in nobody's source files. Facts stay in an immutable `raw/`; the agent owns `wiki/`; `CLAUDE.md` + `schema/` tell it exactly how to behave.
 
 ```
 raw/        immutable sources (docs, exports, code submodules)   ← humans add, agent reads
@@ -16,6 +16,10 @@ CLAUDE.md   the contract Claude Code reads every session
 ```
 
 Extracted from wikis running beside a production app, an investment journal, a daily diary, and an autonomous revenue experiment.
+
+## What it is not (measured)
+
+It is **not a faster or cheaper RAG**. On a 1,200-line library (pallets/itsdangerous, Claude Code 2.1.286, 2026-10-01, each step its own session) answering four code questions by reading the source directly took 124 s / $1.93; the same four through the wiki took 191 s / $2.59, because the agent checks its answer against the source anyway, and building the wiki first cost 7 min 51 s / $4.23 on top. Where the wiki won: a question whose answer is a *decision*, not code. Without the wiki the agent correctly said it could not answer; after one `/llm-wiki:capture`, the next session answered it in 22 s / $0.47 with a dated citation. Use the kit for the decisions, rules and measured results that are not in your source, and let the agent read the source for the rest.
 
 ## Quick start
 
@@ -48,6 +52,8 @@ What you should see (verified 2026-09-23 on Claude Code 2.1.280 in a fresh repo 
 > /llm-wiki:query why don't we use UUIDs for invoice numbers?
   answer from wiki/decisions/invoice-numbering.md, cited as conversation-derived; + [query] line in wiki/log.md
 ```
+
+Pinning is a rule, not a mood (plugin 1.0.4, verified 2026-10-02 on 2.1.287 in a fresh repo, three separate sessions): a decision that rejected a named alternative landed the owner's decisive lines in `raw/conversations/invoice-numbering.md` (11 lines, cited from the wiki entry); a load-test result stayed a volatile summary with no transcript; a later reversal on the same topic was appended to the existing file as a second dated section instead of creating another file. Before 1.0.4 the same decision was pinned one day and only summarized the next.
 
 Two things learned from running the kit against a codebase that is not ours (verified 2026-09-30 on 2.1.285):
 

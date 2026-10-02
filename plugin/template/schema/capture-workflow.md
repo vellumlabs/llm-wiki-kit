@@ -29,8 +29,12 @@ When in doubt, lean toward *not* recording (noise control), but never skip a cle
 ## 3. Conversation transcripts (volatile hybrid)
 
 - **Default: volatile.** Summarize into the wiki; do not store the transcript. Cite as "from conversation, summarized (no transcript)".
-- **Exception: pin.** For decisions likely to be disputed later or with complex background, copy *only the decisive lines* to `raw/conversations/<topic>.md` and cite that. Never paste the whole conversation.
-- The LLM decides volatile vs. pin on its own.
+- **Pin when the decision can be re-litigated.** Copy *only the decisive lines* (the human's own words that chose, rejected or overturned something: a few lines, never the whole conversation) to `raw/conversations/<topic>.md` and cite that file from the wiki entry. Pin whenever **any** of these holds:
+  1. trigger 1 fired and a named alternative was rejected;
+  2. trigger 2 fired (a reversal);
+  3. the human said "pin this" or asked to keep the exact wording.
+- Everything else (measured results, simple stated rules, definitions) stays volatile.
+- These rules decide volatile vs. pin, not judgment of the moment: the same decision must be pinned on every day it is captured. If `raw/conversations/<topic>.md` already exists, append a new dated section with a shell `>>` (never rewrite the file; `raw/` is append-only) instead of creating a second file.
 
 ## 4. Code citations
 
