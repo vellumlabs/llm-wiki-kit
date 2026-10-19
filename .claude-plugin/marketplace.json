@@ -7,7 +7,7 @@
     {
       "name": "llm-wiki",
       "source": "./plugin",
-      "description": "Give Claude Code a persistent, self-maintained knowledge wiki (Karpathy's LLM-wiki idea): /llm-wiki:init scaffolds the template, /llm-wiki:capture records decisions, /llm-wiki:query answers from the wiki.",
+      "description": "Keep the decisions your code can't show, and what they replaced, in a cited wiki Claude Code maintains (Karpathy's LLM-wiki idea): /llm-wiki:init scaffolds the template, /llm-wiki:capture records decisions, /llm-wiki:query answers from the wiki.",
       "version": "1.0.5",
       "author": { "name": "Vellum Labs", "url": "https://github.com/vellumlabs" },
       "homepage": "https://github.com/vellumlabs/llm-wiki-kit",
