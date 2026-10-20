@@ -35,7 +35,7 @@ It is also **not a better memory for a handful of current rules**. Recording the
 
 `/llm-wiki:init` scaffolds `CLAUDE.md`, `WIKI.md`, `schema/`, `wiki/` and `raw/` into the current repository and fills the placeholders. It leaves your `README.md` alone, merges into an existing `.gitignore` instead of replacing it, and commits the scaffold as one commit that touches only its own files (your other uncommitted work stays uncommitted). Then use `/llm-wiki:capture` after a decision and `/llm-wiki:query <question>` to answer from the wiki.
 
-What you should see (verified 2026-09-23 on Claude Code 2.1.280 in a fresh repo that already had its own `README.md` and `.gitignore`; commit behaviour re-verified 2026-09-24 on 2.1.281 with uncommitted work present):
+What you should see (verified 2026-09-23 on Claude Code 2.1.280 in a fresh repo that already had its own `README.md` and `.gitignore`; commit behaviour re-verified 2026-09-24 on 2.1.281 with uncommitted work present; the whole sequence re-run 2026-10-20 on 2.1.304 from a fresh clone of this repo, each step its own headless session, same results: init 6 turns / $0.26, capture 5 / $0.23, query 3 / $0.17):
 
 ```
 > /llm-wiki:init a wiki that captures the decisions behind this invoicing app
@@ -52,7 +52,7 @@ What you should see (verified 2026-09-23 on Claude Code 2.1.280 in a fresh repo 
   committed "wiki: record decision ..." (wiki files only); pushed only if the branch has an upstream
 
 > /llm-wiki:query why don't we use UUIDs for invoice numbers?
-  answer from wiki/decisions/invoice-numbering.md, cited as conversation-derived; + [query] line in wiki/log.md
+  answer from wiki/decisions/invoice-numbering.md, cited as conversation-derived; + [query] line in wiki/log.md, committed (wiki files only)
 ```
 
 `/llm-wiki:init` never stops to ask (plugin 1.0.5, verified 2026-10-05 on 2.1.289 with `claude -p` in three fresh repos that had a README, a `.gitignore` and uncommitted work): with no description it reads the repository name and README, fills every placeholder, commits, and lists the values it chose (4–5 turns, $0.23–0.26); if `CLAUDE.md`, `WIKI.md`, `wiki/` or `schema/` already exist it changes nothing and says which file to move. Before 1.0.5 init without a description copied the template and then waited for an answer, leaving the scaffold unfilled and uncommitted in headless runs.
