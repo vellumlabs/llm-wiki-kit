@@ -35,6 +35,8 @@ It is also **not a better memory for a handful of current rules**. Recording the
 
 `/llm-wiki:init` scaffolds `CLAUDE.md`, `WIKI.md`, `schema/`, `wiki/` and `raw/` into the current repository and fills the placeholders. It leaves your `README.md` alone, merges into an existing `.gitignore` instead of replacing it, and commits the scaffold as one commit that touches only its own files (your other uncommitted work stays uncommitted). Then use `/llm-wiki:capture` after a decision and `/llm-wiki:query <question>` to answer from the wiki.
 
+Start a new session (or `--resume`, or `/compact`) after init and after you edit `CLAUDE.md`: Claude Code reads `CLAUDE.md` when a session starts and does not re-read it mid-session, not even when the agent wrote the file itself (measured on 2.1.310, 2026-10-24: an edit made between turns was not re-read in the same session 3/3, nor when the agent itself wrote the file 1/1; `--resume`, `--continue` and `/compact` each re-injected it 3/3).
+
 What you should see (verified 2026-09-23 on Claude Code 2.1.280 in a fresh repo that already had its own `README.md` and `.gitignore`; commit behaviour re-verified 2026-09-24 on 2.1.281 with uncommitted work present; the whole sequence re-run 2026-10-20 on 2.1.304 from a fresh clone of this repo, each step its own headless session, same results: init 6 turns / $0.26, capture 5 / $0.23, query 3 / $0.17):
 
 ```
